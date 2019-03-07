@@ -9,8 +9,8 @@ from sklearn.model_selection import KFold, StratifiedKFold
 # critical to safe and effective ensembling and evaluation
 # NOTE: 'shuffle' in skl KFold method randomizes order of iteration, NOT fold assignment
 # --------------------------------------------------------
-def assign_folds(df, id_col, target_col, seed, k, stratify=False, new_index=False, save=False): # option to class-balance folds
-	df = df[[id_col,target_col]] # drop unnecessary cols
+def assign_folds(df_, id_col, target_col, seed, k, stratify=False, new_index=False, save=False): # option to class-balance folds
+	df = df_[[id_col,target_col]] # drop unnecessary cols
 	
 	# randomize fold assignment
 	df = df.sample(frac=1, random_state=seed)
